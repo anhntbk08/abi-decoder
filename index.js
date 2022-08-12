@@ -113,9 +113,9 @@ function _decodeMethod(data) {
         const isArray = Array.isArray(param);
 
         if (isArray) {
-          parsedParam = param.map(_ => _.toLowerCase());
+          parsedParam = param.map(_ => _);
         } else {
-          parsedParam = param.toLowerCase();
+          parsedParam = param;
         }
       }
 
@@ -168,7 +168,7 @@ function _decodeLogs(logs) {
         }
 
         if (param.type === "address") {
-          decodedP.value = decodedP.value.toLowerCase();
+          decodedP.value = decodedP.value;
           // 42 because len(0x) + 40
           if (decodedP.value.length > 42) {
             let toRemove = decodedP.value.length - 42;
